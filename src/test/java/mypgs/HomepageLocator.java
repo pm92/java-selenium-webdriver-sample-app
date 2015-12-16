@@ -9,10 +9,9 @@ import org.openqa.selenium.support.How;
  */
 public class HomepageLocator {
 
-    public class Locator {
 
         @FindBy(how = How.XPATH, using = "html/body/div[1]/div/div/div[2]/div[6]/a/h2")
-        public WebElement buttonClick;
+        public WebElement zadanie6Link;
 
-    }
+
 }

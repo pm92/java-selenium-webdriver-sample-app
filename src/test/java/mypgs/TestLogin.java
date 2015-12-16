@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit;
 public class TestLogin {
 
     private static WebDriver driver;
+    private static LoginPage loginPage;
+    private static HomePage homePage;
 
     @BeforeClass
     public static void setUp() {
@@ -62,7 +64,7 @@ public class TestLogin {
 
    }**/
 
-    @Test
+/**    @Test
     public void testDropdown() {
         driver.navigate().to("https://testingcup.pgs-soft.com/");
         driver.findElement(By.linkText("Zadanie 8")).click();
@@ -81,5 +83,20 @@ public class TestLogin {
         Select year = new Select(yearWebElement);
         year.selectByVisibleText("2025");
         Assert.assertEquals("2025", year.getFirstSelectedOption().getText());
+    }
+**/
+    @Test
+    public void testClickZadanie() {
+        driver.navigate().to("https://testingcup.pgs-soft.com/");
+
+        homePage=new HomePage(driver);
+        loginPage=new LoginPage(driver);
+
+        homePage.clickOnZadanie();
+        loginPage.loginAs("admin","admin");
+
+
+
+
     }
 }

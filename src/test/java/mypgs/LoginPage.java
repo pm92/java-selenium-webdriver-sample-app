@@ -8,14 +8,18 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LoginPage {
 
-    private HomepageLocator locators;
+    private LoginLocatores locatores;
 
-    public LoginPage(WebDriver driver) {
-        locators = new HomepageLocator();
-        PageFactory.initElements(driver, locators);
+    public LoginPage(WebDriver driver)
+    {
+        locatores = new LoginLocatores();
+        PageFactory.initElements(driver,locatores);
+
+    }
+    public void loginAs(String username, String password){
+        locatores.login.sendKeys(username);
+        locatores.password.sendKeys(password);
+        locatores.signIn.click();
     }
 
-    public void Enter(){
-        locators.buttonClick.click();
-    }
 }
